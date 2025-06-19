@@ -12,7 +12,7 @@ class Repo:
         if path:
             self.root = path
         else:
-            from gitmini.utils import find_gitmini_root
+            from gitmini_core.utils import find_gitmini_root
             self.root = find_gitmini_root()
 
         self.gitmini_dir = os.path.join(self.root, ".gitmini")

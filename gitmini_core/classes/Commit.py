@@ -1,7 +1,7 @@
 import os
 import time
 import datetime
-from gitmini.utils import compute_sha1
+from gitmini_core.utils import compute_sha1
 
 class Commit:
     """

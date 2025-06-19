@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gitmini-core"
+version = "0.1.0"
+description = "Python package containing the core data structures for GitMini CLI and GitMini Remote Server."
+authors = [{ name = "James Furtado", email = "jamesdfurtado@gmail.com" }]
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.7"
+
+[tool.setuptools]
+packages = { find = {} }
