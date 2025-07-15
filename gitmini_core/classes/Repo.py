@@ -35,6 +35,10 @@ class Repo:
         os.makedirs(gitmini_dir)
         os.makedirs(os.path.join(gitmini_dir, "objects"))
         os.makedirs(os.path.join(gitmini_dir, "refs", "heads"))
+        # Create remote_branches.json inside refs/
+        remote_branches_path = os.path.join(gitmini_dir, "refs", "remote_branches.json")
+        with open(remote_branches_path, "w") as f:
+            f.write("{}\n")
 
         open(os.path.join(gitmini_dir, "index"), "w").close()
 
@@ -42,7 +46,7 @@ class Repo:
         main_ref = os.path.join(gitmini_dir, "refs", "heads", "main")
         open(main_ref, "w").close()
 
-        # Point HEAD to refs/heads/main
+        # Point .gitmini/HEAD to refs/heads/main
         with open(os.path.join(gitmini_dir, "HEAD"), "w") as f:
             f.write("ref: refs/heads/main")
 
@@ -54,6 +58,9 @@ class Repo:
             f.write("__pycache__/\n")
             f.write("*.pyc\n")
 
+        # Create empty config.json
+        config_path = os.path.join(gitmini_dir, "config.json")
+        with open(config_path, "w") as f:
+            f.write("{}\n")
 
         print(f"Initialized empty GitMini repository in {gitmini_dir}")
-
